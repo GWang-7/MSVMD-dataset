@@ -6,7 +6,8 @@ Accurate and reliable monitoring of transmission lines is critical for power gri
 
 
 The dataset covers multiple scenarios, and several groups of representative scenarios along with their corresponding annotation information are shown in the figure.
-![标注数据集](https://github.com/user-attachments/assets/2e66e21c-12a4-47c1-b873-ae9960ac4051)
+<img width="4157" height="1909" alt="mv" src="https://github.com/user-attachments/assets/44809fc9-ad41-4044-8117-a9f75f122386" />
+
 
 
 
@@ -31,17 +32,14 @@ The annotations are provided as binary PNG masks with the same spatial size as t
 - `0`: background
 - `1`: transmission-line region
  
-## Dataset Split
-
-We provide a simple script to generate training and validation splits for the released subset.
+## Dataset Split and Evaluation
 
 ```bash
+# Generate training/validation splits
 python tools/split_dataset.py --image_dir images --mask_dir masks --save_dir splits --train_ratio 0.75 --seed 42
 
-## Evaluation
-
-We provide an evaluation script for binary transmission-line segmentation.
-
-```bash
+# Evaluate binary segmentation results
 python tools/evaluate_segmentation.py --pred_dir predictions --gt_dir masks
+
+
 
