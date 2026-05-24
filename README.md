@@ -34,11 +34,13 @@ The annotations are provided as binary PNG masks with the same spatial size as t
  
 ## Dataset Split and Evaluation
 
+We provide simple scripts for dataset splitting and segmentation evaluation.
+
 ```bash
 # Generate training/validation splits
 python tools/split_dataset.py --image_dir images --mask_dir masks --save_dir splits --train_ratio 0.75 --seed 42
 
-# Evaluate binary segmentation results
+# Evaluate segmentation results
 python tools/evaluate_segmentation.py --pred_dir predictions --gt_dir masks
 
 
